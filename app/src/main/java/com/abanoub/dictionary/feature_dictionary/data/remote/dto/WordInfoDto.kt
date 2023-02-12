@@ -9,7 +9,7 @@ data class WordInfoDto(
     val phonetics: List<PhoneticDto>,
     val word: String
 ) {
-    fun toWordInfoEntity(): WordInfo {
+    fun toWordInfo(): WordInfo {
         return WordInfo(
             meanings = meanings.map { it.toMeaning() },
             origin = origin,
