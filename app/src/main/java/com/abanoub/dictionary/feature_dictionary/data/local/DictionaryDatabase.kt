@@ -7,7 +7,7 @@ import com.abanoub.dictionary.feature_dictionary.data.local.entity.WordInfoEntit
 
 @Database(
     entities = [WordInfoEntity::class],
-    version = 1
+    version = 2
 )
 
 @TypeConverters(Converters::class)
