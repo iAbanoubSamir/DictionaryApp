@@ -2,6 +2,7 @@ package com.abanoub.dictionary.feature_dictionary.di
 
 import android.app.Application
 import androidx.room.Room
+import com.abanoub.dictionary.feature_dictionary.data.local.Converters
 import com.abanoub.dictionary.feature_dictionary.data.local.DictionaryDatabase
 import com.abanoub.dictionary.feature_dictionary.data.remote.DictionaryApi
 import com.abanoub.dictionary.feature_dictionary.data.repository.WordInfoRepositoryImpl
@@ -43,7 +44,7 @@ object AppModule {
             app,
             DictionaryDatabase::class.java,
             "dictionary_db"
-        ).addTypeConverter(GsonParser(Gson()))
+        ).addTypeConverter(Converters(GsonParser(Gson())))
             .build()
     }
 
