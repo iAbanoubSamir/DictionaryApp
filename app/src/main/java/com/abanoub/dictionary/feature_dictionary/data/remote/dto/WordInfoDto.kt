@@ -4,7 +4,7 @@ import com.abanoub.dictionary.feature_dictionary.data.local.entity.WordInfoEntit
 
 data class WordInfoDto(
     val meanings: List<MeaningDto>,
-    val origin: String,
+    val origin: String? = null,
     val phonetic: String,
     val phonetics: List<PhoneticDto>,
     val word: String
@@ -12,7 +12,7 @@ data class WordInfoDto(
     fun toWordInfoEntity(): WordInfoEntity {
         return WordInfoEntity(
             meanings = meanings.map { it.toMeaning() },
-            origin = origin,
+            origin = origin.toString(),
             phonetic = phonetic,
             word = word
         )
