@@ -45,6 +45,7 @@ object AppModule {
             DictionaryDatabase::class.java,
             "dictionary_db"
         ).addTypeConverter(Converters(GsonParser(Gson())))
+            .fallbackToDestructiveMigration()
             .build()
     }
 
